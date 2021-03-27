@@ -1,4 +1,4 @@
-const API_URL = "https://yts.mx/api/v2/list_movies.json?genre"
+const API_URL = "https://yts.mx/api/v2/list_movies.json"
 const container = document.getElementById('root');
 
 // Adding interactivity to the icons on the header section
@@ -22,13 +22,13 @@ function hideModal(ev) {
 // Geting values of the API
 const getData = async (url) => {
     const response = await fetch(url);
-    const { data } = await response.json();
-    return data.movies;    
+    const { data: { movies: data } } = await response.json();
+    return data;    
 };
-// Creating the template
+// Creating templates
 const movieTemplate = (peli) => {
     return (`
-        <article class="article__movie">
+        <article class="article__movie" >
             <figure class="article__image">
                 <img src=${peli.medium_cover_image} alt="Image of the movie">
             </figure>
@@ -39,14 +39,30 @@ const movieTemplate = (peli) => {
                     <li>Buy: <strong>$1.5 USD</strong></li>
                 </ul>
                 <div class="buttons__container">
-                    <button class="article__button--rent">Rent</button>
-                    <button class="article__button--buy">Buy</button> 
+                    <button id=rent_${peli.id} class="article__button--rent">Rent</button>
+                    <button id=buy_${peli.id} class="article__button--buy">Buy</button> 
                 </div> 
                 <p class="article__description"><b>Synopsis:</b> ${peli.synopsis}</p>            
             </div>
         </article>
     `)
 }
+const modalDetailsTemplate = (peli) => {
+    return (`
+    <article class="modal__container">
+        <p class="modal__details">Rent Details</p>
+        <h2 class="modal__title">${peli.title}</h2>
+        <strong>ID: ${peli.id}</strong>
+        <p class="modal__price">Price: <em>$1 USD</em></p>
+        <p class="modal__synopsis"><b>Synopsis: </b>${peli.synopsis}</p>
+        <div class="modal__button-container">
+            <button class="modal__button-rent">Rent</button>
+            <button class="modal__button-cancel">Cancel</button>
+        </div>
+    </article> 
+    `)
+}
+
 // Adding articles to the DOM
 async function load() {
     const datos = await getData(API_URL);
@@ -59,3 +75,9 @@ async function load() {
     })
 }
 load();
+
+// Show modal to Rent
+
+async function showRentModal() {
+    
+}

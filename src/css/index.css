@@ -95,3 +95,47 @@ body {
     margin: 5px;
 }
 
+.modal__container {
+    width: 300px;
+    padding: 20px;
+    border-radius: 10px;
+    position: absolute;
+    z-index: 1;
+    background-color: #fff;
+    box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.3);    
+    text-align: center;
+}
+.modal__details {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+}
+.modal__title {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+}
+.modal__price {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+.modal__synopsis {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+.modal__button-container {
+    margin-top: 30px;
+}
+.modal__button-container button {
+    width: 80px;
+    height: 30px;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+}
+.modal__button-container .modal__button-rent {
+    margin-right: 10px;
+    color: #fff;
+    background-color: #06125a;
+}
+.modal__button-container .modal__button-cancel {
+    border: 1px solid #06125a;
+}
