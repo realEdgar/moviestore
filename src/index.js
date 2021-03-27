@@ -25,7 +25,7 @@ const getData = async (url) => {
     const { data } = await response.json();
     return data.movies;    
 };
-
+// Creating the template
 const movieTemplate = (peli) => {
     return (`
         <article class="article__movie">
@@ -34,17 +34,20 @@ const movieTemplate = (peli) => {
             </figure>
             <div class="text__container">
                 <h1 class="article__title">${peli.title}</h1>
-                <em>$1 USD</em>
-                <p class="article__description"><b>Synopsis:</b> ${peli.synopsis}</p>
+                <ul class="article__price">
+                    <li>Rent: <strong>$1 USD</strong></li>
+                    <li>Buy: <strong>$1.5 USD</strong></li>
+                </ul>
                 <div class="buttons__container">
                     <button class="article__button--rent">Rent</button>
                     <button class="article__button--buy">Buy</button> 
-                </div>                
+                </div> 
+                <p class="article__description"><b>Synopsis:</b> ${peli.synopsis}</p>            
             </div>
         </article>
     `)
 }
-
+// Adding articles to the DOM
 async function load() {
     const datos = await getData(API_URL);
     console.log(datos);

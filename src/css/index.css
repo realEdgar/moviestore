@@ -54,6 +54,44 @@ body {
     width: 300px;
     padding: 20px;
     margin: 0 auto;
-    border: 2px solid black;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.3);
     text-align: center;
 }
+.article__image {
+    margin-bottom: 20px;
+}
+.article__title {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+}
+.buttons__container {
+    margin: 25px;
+}
+.article__button--rent, .article__button--buy {
+    width: 80px;
+    height: 30px;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+}
+.article__button--rent {
+    margin-right: 10px;
+    border: 1px solid #06125a;
+}
+.article__button--buy {
+    color: #fff;
+    background-color: #06125a;
+}
+.article__description {
+    text-align: justify;
+    font-size: 1.2rem;
+}
+.article__price {
+    list-style: none;
+}
+.article__price li {
+    margin: 5px;
+}
+
