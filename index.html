@@ -1,25 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./src/css/index.css">
-    <title>Movie Store | rent and buy movies</title>
-</head>
-<body>
-    <header class="header" >
-        <h1 class="header__title" >Movie Store</h1>
-        <figure class="header__nav-icons" >
-            <img class="icon-hamburger" src="./src/images/icon-hamburger.svg" alt="icon-hamburger" >
-            <img class="icon-close-menu" src="./src/images/icon-close-menu.svg" alt="icon-close-menu">
-        </figure>
-    </header>
-    <main class="main" id="root">
-        <h1 class="main__title">Best Movies</h1>
-        
-    </main>
-    <script src="./src/index.js"></script>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./src/css/index.css">
+        <link rel="stylesheet" href="./src/css/desktop.css">
+        <title>Movie Store | Rent and Buy Movies</title>
+    </head>
+    <body>
+        <header class="header" >
+            <h1 class="header__title" >Movie Store</h1>
+            <figure class="header__nav-icons" >
+                <img class="icon-hamburger" src="./src/images/icon-hamburger.svg" alt="icon-hamburger" >
+                <img class="icon-close-menu" src="./src/images/icon-close-menu.svg" alt="icon-close-menu">
+            </figure>
+            <nav class="header__nav">
+                <h2 class="nav__title"><u>Categories:</u></h2>
+                <ul class="nav__list">
+                    <li><a href="#allmovies">Best Movies</a></li>
+                    <li><a href="#action">Action</a></li>
+                    <li><a href="#comedy">Comedy</a></li>
+                    <li><a href="#drama">Drama</a></li>
+                    <li><a href="#animation">Animation</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main class="main" id="root">
+            <section>
+                <div class="section__text">
+                    <h2 class="sections__title">Popular Movies</h2>
+                    <p class="section__description">The most popular movies on the Movie Store</p>
+                </div>
+                <div id="allmovies"></div>          
+            </section>
+            <section>
+                <div class="section__text">
+                    <h2 class="sections__title">Action Movies</h2>
+                    <p class="section__description">Bullet, Suspence and many Action</p>
+                </div>
+                <div id="action"></div>          
+            </section>
+            <section>
+                <div class="section__text">
+                    <h2 class="sections__title">Comedy Movies</h2>
+                    <p class="section__description">You will laught a lot</p>
+                </div>
+                <div id="comedy"></div>
+            </section>
+            <section >
+                <div class="section__text">
+                    <h2 class="sections__title">Drama Movies</h2>
+                    <p class="section__description">Horror and Drama</p>
+                </div>
+                <div id="drama"></div>          
+            </section>
+            <section>
+                <div class="section__text">
+                    <h2 class="sections__title">Animation Movies</h2>
+                    <p class="section__description">For all the family and special for Kids</p>
+                </div>
+                <div id="animation"></div>    
+            </section>
+        </main>
+        <script src="./src/index.js"></script>
+    </body>
 </html>

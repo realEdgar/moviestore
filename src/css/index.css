@@ -9,10 +9,13 @@ html {
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
     width: 100%;
     height: 100vh;
+    min-width: 320px;
+    font-family: 'Montserrat', sans-serif;
 }
+
+/*----- Header Styles -----*/
 
 .header {
     width: 100%;
@@ -21,6 +24,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: fixed;
+    top: 0;
     background-color: #06125a;
 }
 
@@ -28,6 +33,7 @@ body {
     font-style: italic;
     color: #fff;
 }
+
 .header__nav-icons {
     width: 40px;
     height: 40px;
@@ -37,38 +43,123 @@ body {
     justify-content: center;
     background-color: rgba(0, 0, 0, 0.3);
 }
+
 .header__nav-icons img {
     width: 20px;
 }
+
 .header__nav-icons .icon-hamburger {
     display: block;
 }
+
 .header__nav-icons .icon-close-menu {
     display: none;
 }
+
+.header__nav {
+    padding: 30px;
+    display: none;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: fixed;
+    top: 80px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    background-color: rgba(6, 18, 90, 0.9);
+    animation: fadeIn 0.5s forwards;
+}
+
+.nav__title {
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+    font-style: oblique;
+    color: #fff;
+}
+
+.nav__list {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    list-style: none;
+}
+
+.nav__list li a {
+    padding: 10px;
+    font-size: 1.6rem;
+    text-decoration: none;
+    color: #a0a0a0;
+}
+
+.header__nav li a:hover {
+    text-decoration: underline;
+    color: #fff;
+}
+
+@keyframes fadeIn {
+    from {
+        bottom: calc(100vh - 80px);
+    } to {
+        bottom: 0;
+    }
+}
+
+/*----- Main Styles -----*/
+
+.main {
+    margin-top: 120px;
+    padding-bottom: 50px;
+}
+
 .main__title {
     text-align: center;
     margin: 20px 0;
 }
+
+.sections__title {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.section__description {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
 .article__movie {
     width: 300px;
-    padding: 20px;
     margin: 0 auto;
     margin-bottom: 20px;
     border-radius: 10px;
+    background-color: white;
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.3);
     text-align: center;
 }
+
 .article__image {
+    width: 100%;
     margin-bottom: 20px;
 }
+
+.article__image img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
 .article__title {
     font-size: 1.6rem;
     margin-bottom: 10px;
 }
+
 .buttons__container {
     margin: 25px;
 }
+
 .article__button--rent, .article__button--buy {
     width: 80px;
     height: 30px;
@@ -76,23 +167,47 @@ body {
     border: none;
     outline: none;
 }
+
 .article__button--rent {
     margin-right: 10px;
     border: 1px solid #06125a;
 }
+
 .article__button--buy {
     color: #fff;
     background-color: #06125a;
 }
+
 .article__description {
     text-align: justify;
     font-size: 1.2rem;
+    display: none;
 }
+
+/* .article__movie:hover .article__description {
+    display: block;
+} */
+
 .article__price {
     list-style: none;
 }
+
 .article__price li {
     margin: 5px;
+}
+
+.text__container { 
+    display: none;
+}
+
+.article__movie:hover .text__container {
+    display: block;
+    position: absolute;
+    top: calc(100% - 100px);
+    right: 0;
+    bottom: 0;
+    left: 0;
+    color: white;
 }
 
 .modal__container {
@@ -105,25 +220,31 @@ body {
     box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.3);    
     text-align: center;
 }
+
 .modal__details {
     font-size: 1.4rem;
     margin-bottom: 20px;
 }
+
 .modal__title {
     font-size: 1.6rem;
     margin-bottom: 10px;
 }
+
 .modal__price {
     font-size: 1.2rem;
     margin-bottom: 10px;
 }
+
 .modal__synopsis {
     font-size: 1.2rem;
     margin-bottom: 10px;
 }
+
 .modal__button-container {
     margin-top: 30px;
 }
+
 .modal__button-container button {
     width: 80px;
     height: 30px;
@@ -131,11 +252,13 @@ body {
     border: none;
     outline: none;
 }
+
 .modal__button-container .modal__button-rent {
     margin-right: 10px;
     color: #fff;
     background-color: #06125a;
 }
+
 .modal__button-container .modal__button-cancel {
     border: 1px solid #06125a;
 }
